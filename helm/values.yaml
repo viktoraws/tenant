@@ -1,0 +1,27 @@
+tenants:
+  - name: tenant1
+    namespaces:
+      - tenant1-dev
+      - tenant1-prod
+    owners:
+      - name: alice
+        kind: User
+    resourceQuotas:
+      hard:
+        requests.cpu: "4"
+        requests.memory: 8Gi
+        limits.cpu: "8"
+        limits.memory: 16Gi
+  - name: tenant2
+    namespaces:
+      - tenant2-dev
+      - tenant2-prod
+    owners:
+      - name: bob
+        kind: User
+    resourceQuotas:
+      hard:
+        requests.cpu: "2"
+        requests.memory: 4Gi
+        limits.cpu: "4"
+        limits.memory: 8Gi

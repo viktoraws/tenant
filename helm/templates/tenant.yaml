@@ -1,0 +1,32 @@
+
+{{- range .Values.tenants }}
+apiVersion: capsule.clastix.io/v1beta2
+kind: Tenant
+metadata:
+  name: {{ .name }}
+spec:
+  owners:
+    {{- range .owners }}
+    - name: {{ .name }}
+      kind: {{ .kind }}
+    {{- end }}
+  namespaceOptions:
+    additionalMetadata:
+      labels:
+        capsule.clastix.io/tenant: {{ .name }}
+  resourceQuota:
+    hard:
+      {{- range $key, $value := .resourceQuotas.hard }}
+      {{ $key }}: {{ $value }}
+      {{- end }}
+---
+{{- range .namespaces }}
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ . }}
+  labels:
+    capsule.clastix.io/tenant: {{ $.name }}
+---
+{{- end }}
+{{- end }}
