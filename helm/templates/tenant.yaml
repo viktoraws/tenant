@@ -1,4 +1,3 @@
-
 {{- range .Values.tenants }}
 apiVersion: capsule.clastix.io/v1beta2
 kind: Tenant
@@ -26,7 +25,11 @@ kind: Namespace
 metadata:
   name: {{ . }}
   labels:
-    capsule.clastix.io/tenant: {{ $.name }}
+    capsule.clastix.io/tenant: "{{ $.name }}"
+    app.kubernetes.io/managed-by: "Helm" # Ensures Helm recognizes namespace
+  annotations:
+    helm.sh/resource-policy: keep # Prevents namespace deletion on uninstall
 ---
 {{- end }}
 {{- end }}
+
