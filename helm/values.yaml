@@ -1,8 +1,8 @@
 tenants:
   - name: tenant1
     namespaces:
-      - tenant1-dev
-      - tenant1-prod
+      - "tenant1-dev"
+      - "tenant1-int"
     owners:
       - name: alice
         kind: User
@@ -14,8 +14,8 @@ tenants:
         limits.memory: 16Gi
   - name: tenant2
     namespaces:
-      - tenant2-dev
-      - tenant2-prod
+      - "tenant2-dev"
+      - "tenant2-int"
     owners:
       - name: bob
         kind: User
