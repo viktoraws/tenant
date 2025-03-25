@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: tenant-chart
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/viktoraws/tenant.git'
+    targetRevision: HEAD
+    path: helm
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: tenant-system
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      prune: true
