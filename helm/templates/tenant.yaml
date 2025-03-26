@@ -16,7 +16,7 @@ spec:
   resourceQuota:
     hard:
       {{- range $key, $value := .resourceQuotas.hard }}
-      {{ $key }}: {{ $value }}
+      {{ $key }}: {{ $value | quote }}
       {{- end }}
 ---
 {{- range .namespaces }}
