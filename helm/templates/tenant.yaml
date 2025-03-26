@@ -14,9 +14,17 @@ spec:
       labels:
         capsule.clastix.io/tenant: "{{ .name }}"
   resourceQuota:
-    hard:
-      {{- range $key, $value := .resourceQuotas.hard }}
-      {{ $key }}: {{ $value | quote }}
+    scope: Tenant
+    items:
+      {{- range .resourceQuotas.items }}
+      - hard:
+          {{- if .hard }}
+          {{- range $key, $value := .hard }}
+          {{ $key }}: {{ $value | quote }}
+          {{- end }}
+          {{- else }}
+          {}
+          {{- end }}
       {{- end }}
 ---
 {{- range .namespaces }}
