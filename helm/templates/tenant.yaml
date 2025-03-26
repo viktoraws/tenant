@@ -13,7 +13,7 @@ spec:
     additionalMetadata:
       labels:
         capsule.clastix.io/tenant: "{{ .name }}"
-  resourceQuota:
+  resourceQuotas:
     {{- range .resourceQuotas.items }}
     - hard:
         {{- range $key, $value := .hard }}
