@@ -13,10 +13,24 @@ spec:
     additionalMetadata:
       labels:
         capsule.clastix.io/tenant: "{{ .name }}"
+  resourceQuotas:
     {{- range .resourceQuotas.items }}
     - hard:
         {{- range $key, $value := .hard }}
-        {{ $key }}: "{{ $value }}"
+        {{ $key }}: "{{ $value }}" # Ensuring values are quoted as strings
+        {{- end }}
+    {{- end }}
+  limitRanges:
+    {{- range .limitRanges.items }}
+    - limits:
+        {{- range .limits }}
+        - default:
+            cpu: "{{ .default.cpu }}"
+            memory: "{{ .default.memory }}"
+          defaultRequest:
+            cpu: "{{ .defaultRequest.cpu }}"
+            memory: "{{ .defaultRequest.memory }}"
+          type: "{{ .type }}"
         {{- end }}
     {{- end }}
 ---
