@@ -2,26 +2,59 @@ tenants:
   - name: tenant1
     namespaces:
       - tenant1-dev
-      - tenant1-int
+      - tenant1-prod
     owners:
       - name: alice
         kind: User
+    namespaceOptions:
+      quota: 3
     resourceQuotas:
-      hard:
-        requests.cpu: 4
-        requests.memory: 8Gi
-        limits.cpu: 8
-        limits.memory: 16Gi
+      scope: Tenant
+      items:
+        - hard:
+            requests.cpu: "4"
+            requests.memory: 8Gi
+            limits.cpu: "8"
+            limits.memory: 16Gi
+        - hard:
+            pods: "10"
+    limitRanges:
+      items:
+        - limits:
+            - default:
+                cpu: 500m
+                memory: 512Mi
+              defaultRequest:
+                cpu: 100m
+                memory: 10Mi
+              type: Container
   - name: tenant2
     namespaces:
       - tenant2-dev
-      - tenant2-int
+      - tenant2-prod
     owners:
       - name: bob
         kind: User
+    namespaceOptions:
+      quota: 3
     resourceQuotas:
-      hard:
-        requests.cpu: 2
-        requests.memory: 4Gi
-        limits.cpu: 4
-        limits.memory: 8Gi
+      scope: Tenant
+      items:
+        - hard:
+            requests.cpu: "2"
+            requests.memory: 4Gi
+            limits.cpu: "4"
+            limits.memory: 8Gi
+        - hard:
+            pods: "10"
+    limitRanges:
+      items:
+        - limits:
+            - default:
+                cpu: 500m
+                memory: 512Mi
+              defaultRequest:
+                cpu: 100m
+                memory: 10Mi
+              type: Container
+
