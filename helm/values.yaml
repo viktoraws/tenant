@@ -4,6 +4,7 @@ tenants:
     namespaces:
       - tenant1-dev
       - tenant1-prod
+      - tenant1-int
     owners:
     namespaceOptions:
       quota: 3
