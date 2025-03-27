@@ -5,8 +5,6 @@ tenants:
       - tenant1-dev
       - tenant1-prod
     owners:
-      - name: system:serviceaccount:tenant-system:robot
-        kind: ServiceAccount
     namespaceOptions:
       quota: 3
     resourceQuotas:
@@ -35,8 +33,6 @@ tenants:
       - tenant2-dev
       - tenant2-prod
     owners:
-      - name: system:serviceaccount:tenant-system:robot
-        kind: ServiceAccount
     namespaceOptions:
       quota: 3
     resourceQuotas:
