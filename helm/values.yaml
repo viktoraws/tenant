@@ -26,11 +26,11 @@ tenants:
                 cpu: 100m
                 memory: 10Mi
               type: Container
-# Tenant2 config
-  - name: tenant2
+# Tenant3 config
+  - name: tenant3
     namespaces:
-      - tenant2-dev
-      - tenant2-prod
+      - tenant3-dev
+      - tenant3-prod
     owners:
     namespaceOptions:
       quota: 3
@@ -53,3 +53,5 @@ tenants:
                 cpu: 100m
                 memory: 10Mi
               type: Container
+
+
