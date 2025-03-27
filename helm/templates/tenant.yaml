@@ -35,7 +35,6 @@ spec:
           {{- end }}
       {{- end }}
 ---
-{{- range .Values.tenants }}
 {{- $tenantName := .name }}
 {{- range .namespaces }}
 apiVersion: v1
@@ -44,12 +43,9 @@ metadata:
   name: {{ . }}
   labels:
     capsule.clastix.io/tenant: "{{ $tenantName }}"
-    app.kubernetes.io/managed-by: "Helm" # Ensures Helm recognizes namespace
+    app.kubernetes.io/managed-by: "Helm"
   annotations:
-    helm.sh/resource-policy: keep # Prevents namespace deletion on uninstall
-# dependsOn:
-#   - tenant.yaml
+    helm.sh/resource-policy: keep
 ---
-{{- end }}
 {{- end }}
 {{- end }}
