@@ -46,8 +46,8 @@ metadata:
     app.kubernetes.io/managed-by: "Helm" # Ensures Helm recognizes namespace
   annotations:
     helm.sh/resource-policy: keep # Prevents namespace deletion on uninstall
-dependsOn:
-  - tenant.yaml
+# dependsOn:
+#   - tenant.yaml
 ---
 {{- end }}
 {{- end }}
