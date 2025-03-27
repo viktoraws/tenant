@@ -14,6 +14,7 @@ spec:
       labels:
         capsule.clastix.io/tenant: "{{ .name }}"
   resourceQuotas:
+    scope: Tenant
     {{- range .resourceQuotas.items }}
     - hard:
         {{- range $key, $value := .hard }}
@@ -21,6 +22,7 @@ spec:
         {{- end }}
     {{- end }}
   limitRanges:
+    scope: Tenant
     {{- range .limitRanges.items }}
     - limits:
         {{- range .limits }}

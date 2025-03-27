@@ -9,7 +9,6 @@ tenants:
     namespaceOptions:
       quota: 3
     resourceQuotas:
-      scope: Tenant
       items:
         - hard:
             requests.cpu: "4"
@@ -38,7 +37,6 @@ tenants:
     namespaceOptions:
       quota: 3
     resourceQuotas:
-      scope: Tenant
       items:
         - hard:
             requests.cpu: "2"
