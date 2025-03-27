@@ -21,7 +21,6 @@ spec:
           {{- end }}
       {{- end }}
   limitRanges:
-    scope: Tenant
     items:
       {{- range .limitRanges.items }}
       - limits:
