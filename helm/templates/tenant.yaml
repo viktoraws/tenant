@@ -17,7 +17,7 @@ spec:
       {{- range .resourceQuotas.items }}
       - hard:
           {{- range $key, $value := .hard }}
-          {{ $key }}: {{ $value }}  # Removed unnecessary quotes
+          {{ $key }}: "{{ $value }}"  # Removed unnecessary quotes
           {{- end }}
       {{- end }}
   limitRanges:
