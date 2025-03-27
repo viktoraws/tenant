@@ -15,26 +15,28 @@ spec:
         capsule.clastix.io/tenant: "{{ .name }}"
   resourceQuotas:
     scope: Tenant
-    {{- range .resourceQuotas.items }}
-    - hard:
-        {{- range $key, $value := .hard }}
-        {{ $key }}: "{{ $value }}" # Ensuring values are quoted as strings
-        {{- end }}
-    {{- end }}
+    items:
+      {{- range .resourceQuotas.items }}
+      - hard:
+          {{- range $key, $value := .hard }}
+          {{ $key }}: {{ $value }}  # Removed unnecessary quotes
+          {{- end }}
+      {{- end }}
   limitRanges:
     scope: Tenant
-    {{- range .limitRanges.items }}
-    - limits:
-        {{- range .limits }}
-        - default:
-            cpu: "{{ .default.cpu }}"
-            memory: "{{ .default.memory }}"
-          defaultRequest:
-            cpu: "{{ .defaultRequest.cpu }}"
-            memory: "{{ .defaultRequest.memory }}"
-          type: "{{ .type }}"
-        {{- end }}
-    {{- end }}
+    items:
+      {{- range .limitRanges.items }}
+      - limits:
+          {{- range .limits }}
+          - default:
+              cpu: {{ .default.cpu }}  # Removed unnecessary quotes
+              memory: {{ .default.memory }}
+            defaultRequest:
+              cpu: {{ .defaultRequest.cpu }}
+              memory: {{ .defaultRequest.memory }}
+            type: {{ .type }}
+          {{- end }}
+      {{- end }}
 ---
 {{- range .namespaces }}
 apiVersion: v1
@@ -49,4 +51,3 @@ metadata:
 ---
 {{- end }}
 {{- end }}
-
