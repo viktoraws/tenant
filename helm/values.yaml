@@ -1,5 +1,5 @@
 tenants:
-# Tenant12 config
+# Tenant1 config
   - name: tenant1
     namespaces:
       - tenant1-dev
@@ -26,7 +26,7 @@ tenants:
                 cpu: 100m
                 memory: 10Mi
               type: Container
-# Tenant 2 config
+# Tenant2 config
   - name: tenant2
     namespaces:
       - tenant2-dev
