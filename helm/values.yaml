@@ -12,12 +12,12 @@ tenants:
       scope: Tenant
       items:
         - hard:
-            requests.cpu: 4
+            requests.cpu: "4"
             requests.memory: 8Gi
-            limits.cpu: 8
+            limits.cpu: "8"
             limits.memory: 16Gi
         - hard:
-            pods: 10
+            pods: "10"
     limitRanges:
       scope: Tenant
       items:
@@ -42,12 +42,12 @@ tenants:
       scope: Tenant
       items:
         - hard:
-            requests.cpu: 2
+            requests.cpu: "2"
             requests.memory: 4Gi
-            limits.cpu: 4
+            limits.cpu: "4"
             limits.memory: 8Gi
         - hard:
-            pods: 10
+            pods: "10"
     limitRanges:
       scope: Tenant
       items:
