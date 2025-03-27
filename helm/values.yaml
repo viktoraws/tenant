@@ -1,11 +1,12 @@
 tenants:
+# Tenant12 config
   - name: tenant1
     namespaces:
       - tenant1-dev
       - tenant1-prod
     owners:
-      - name: alice
-        kind: User
+      - name: system:serviceaccount:tenant-system:robot
+        kind: ServiceAccount
     namespaceOptions:
       quota: 3
     resourceQuotas:
@@ -28,14 +29,14 @@ tenants:
                 cpu: 100m
                 memory: 10Mi
               type: Container
-
+# Tenant 2 config
   - name: tenant2
     namespaces:
       - tenant2-dev
       - tenant2-prod
     owners:
-      - name: bob
-        kind: User
+      - name: system:serviceaccount:tenant-system:robot
+        kind: ServiceAccount
     namespaceOptions:
       quota: 3
     resourceQuotas:
