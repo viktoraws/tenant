@@ -61,5 +61,6 @@ tenants:
     owners:
     namespaceOptions:
     resourceQuotas:
+      items:
     limitRanges:
-
+      items:
