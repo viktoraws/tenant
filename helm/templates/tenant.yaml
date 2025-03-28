@@ -47,6 +47,8 @@ metadata:
     capsule.clastix.io/allowed: "true"
   annotations:
     helm.sh/resource-policy: keep
+spec:
+  serviceAccountName: robot # Ensure namespace creation is done by this SA
 ---
 {{- end }}
 {{- end }}
