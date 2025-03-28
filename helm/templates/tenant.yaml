@@ -48,7 +48,7 @@ metadata:
   annotations:
     helm.sh/resource-policy: keep
 spec:
-  serviceAccountName: robot # Ensure namespace creation is done by this SA
+  serviceAccountName: system:serviceaccount:tenant-system # Ensure namespace creation is done by this SA
 ---
 {{- end }}
 {{- end }}
