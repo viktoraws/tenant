@@ -1,9 +1,9 @@
 tenants:
-# Tenant1 config
-  - name: tenant1
+# Tenant-csi1 config
+  - name: tenant-csi1
     namespaces:
-      - tenant1-dev
-      - tenant1-prod
+      - tenant-csi1-dev
+      - tenant-csi1-uat
     owners:
     namespaceOptions:
       quota: 3
@@ -27,10 +27,10 @@ tenants:
                 memory: 10Mi
               type: Container
 # Tenant2 config
-  - name: tenant2
+  - name: tenant-csi2
     namespaces:
-      - tenant2-dev
-      - tenant2-prod
+      - tenant-csi2-dev
+      - tenant-csi2-uat
     owners:
     namespaceOptions:
       quota: 3
@@ -53,3 +53,14 @@ tenants:
                 cpu: 100m
                 memory: 10Mi
               type: Container
+# Tenant3 config
+  - name: tenant-csi3
+    namespaces:
+      - tenant-csi3-dev
+      - tenant-csi3-uat
+    owners:
+    namespaceOptions:
+    resourceQuotas:
+      items:
+    limitRanges:
+      items:
