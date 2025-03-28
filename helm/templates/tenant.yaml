@@ -5,7 +5,7 @@ metadata:
   name: {{ .name }}
 spec:
   owners:
-    - name: system:serviceaccount:tenant-system:robot
+    - name: system:serviceaccount:argocd:argocd-server
       kind: ServiceAccount
   namespaceOptions:
     additionalMetadata:
