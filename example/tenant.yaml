@@ -1,0 +1,12 @@
+apiVersion: capsule.clastix.io/v1beta2
+kind: Tenant
+metadata:
+  name: test-service-account-tenant
+spec:
+  owners:
+    - name: system:serviceaccount:tenant-system:robot
+      kind: ServiceAccount
+  namespaceOptions:
+    additionalMetadata:
+      labels:
+        capsule.clastix.io/tenant: "test-service-account-tenant"
