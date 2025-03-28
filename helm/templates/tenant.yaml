@@ -5,7 +5,8 @@ metadata:
   name: {{ .name }}
 spec:
   owners:
-    - name: system:serviceaccount:tenant-system:robot
+    - name: robot
+      namespace: tenant-system
       kind: ServiceAccount
   namespaceOptions:
     # additionalMetadata:
