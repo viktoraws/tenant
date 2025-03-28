@@ -8,9 +8,9 @@ spec:
     - name: system:serviceaccount:tenant-system:robot
       kind: ServiceAccount
   namespaceOptions:
-    # additionalMetadata:
-    #   labels:
-    #     capsule.clastix.io/tenant: "{{ .name }}"
+    additionalMetadata:
+      labels:
+        capsule.clastix.io/tenant: "{{ .name }}"
   resourceQuotas:
     scope: Tenant
     items:
@@ -42,7 +42,7 @@ kind: Namespace
 metadata:
   name: {{ . }}
   labels:
-    capsule.clastix.io/tenant: "{{ $tenantName }}"
+    # capsule.clastix.io/tenant: "{{ $tenantName }}"
     app.kubernetes.io/managed-by: "Helm"
   annotations:
     helm.sh/resource-policy: keep
