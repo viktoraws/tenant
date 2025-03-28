@@ -5,79 +5,79 @@ tenants:
       - tenant-csi1-dev
       - tenant-csi1-uat
     owners:
-    namespaceOptions:
-      quota: 3
-    resourceQuotas:
-      items:
-        - hard:
-            requests.cpu: 4
-            requests.memory: 8Gi
-            limits.cpu: 8
-            limits.memory: 16Gi
-        - hard:
-            pods: 10
-    limitRanges:
-      items:
-        - limits:
-            - default:
-                cpu: 500m
-                memory: 512Mi
-              defaultRequest:
-                cpu: 100m
-                memory: 10Mi
-              type: Container
+    # namespaceOptions:
+    #   quota: 3
+    # resourceQuotas:
+    #   items:
+    #     - hard:
+    #         requests.cpu: 4
+    #         requests.memory: 8Gi
+    #         limits.cpu: 8
+    #         limits.memory: 16Gi
+    #     - hard:
+    #         pods: 10
+    # limitRanges:
+    #   items:
+    #     - limits:
+    #         - default:
+    #             cpu: 500m
+    #             memory: 512Mi
+    #           defaultRequest:
+    #             cpu: 100m
+    #             memory: 10Mi
+    #           type: Container
 # Tenant2 config
   - name: tenant-csi2
     namespaces:
       - tenant-csi2-dev
       - tenant-csi2-uat
     owners:
-    namespaceOptions:
-      quota: 3
-    resourceQuotas:
-      items:
-        - hard:
-            requests.cpu: 2
-            requests.memory: 4Gi
-            limits.cpu: 4
-            limits.memory: 8Gi
-        - hard:
-            pods: 10
-    limitRanges:
-      items:
-        - limits:
-            - default:
-                cpu: 500m
-                memory: 512Mi
-              defaultRequest:
-                cpu: 100m
-                memory: 10Mi
-              type: Container
+    # namespaceOptions:
+    #   quota: 3
+    # resourceQuotas:
+    #   items:
+    #     - hard:
+    #         requests.cpu: 2
+    #         requests.memory: 4Gi
+    #         limits.cpu: 4
+    #         limits.memory: 8Gi
+    #     - hard:
+    #         pods: 10
+    # limitRanges:
+    #   items:
+    #     - limits:
+    #         - default:
+    #             cpu: 500m
+    #             memory: 512Mi
+    #           defaultRequest:
+    #             cpu: 100m
+    #             memory: 10Mi
+    #           type: Container
 # Tenant3 config
   - name: tenant-csi3
     namespaces:
       - tenant-csi3-dev
       - tenant-csi3-uat
     owners:
-    namespaceOptions:
-      quota: 3
-    resourceQuotas:
-      items:
-        - hard:
-            requests.cpu: 2
-            requests.memory: 4Gi
-            limits.cpu: 4
-            limits.memory: 8Gi
-        - hard:
-            pods: 10
-    limitRanges:
-      items:
-        - limits:
-            - default:
-                cpu: 500m
-                memory: 512Mi
-              defaultRequest:
-                cpu: 100m
-                memory: 10Mi
-              type: Container
+    # namespaceOptions:
+    #   quota: 3
+    # resourceQuotas:
+    #   items:
+    #     - hard:
+    #         requests.cpu: 2
+    #         requests.memory: 4Gi
+    #         limits.cpu: 4
+    #         limits.memory: 8Gi
+    #     - hard:
+    #         pods: 10
+    # limitRanges:
+    #   items:
+    #     - limits:
+    #         - default:
+    #             cpu: 500m
+    #             memory: 512Mi
+    #           defaultRequest:
+    #             cpu: 100m
+    #             memory: 10Mi
+    #           type: Container
 
