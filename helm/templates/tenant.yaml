@@ -44,6 +44,7 @@ metadata:
   labels:
     capsule.clastix.io/tenant: "{{ $tenantName }}"
     app.kubernetes.io/managed-by: "Helm"
+    capsule.clastix.io/allowed: "true"
   annotations:
     helm.sh/resource-policy: keep
 ---
