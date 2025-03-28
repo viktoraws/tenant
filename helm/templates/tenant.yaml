@@ -8,9 +8,9 @@ spec:
     - name: system:serviceaccount:argocd:argocd-server
       kind: ServiceAccount
   namespaceOptions:
-    # additionalMetadata:
-    #   labels:
-    #     capsule.clastix.io/tenant: "{{ .name }}"
+    additionalMetadata:
+      labels:
+        capsule.clastix.io/tenant: "{{ .name }}"
   resourceQuotas:
     scope: Tenant
     items:
