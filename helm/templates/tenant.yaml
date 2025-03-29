@@ -5,7 +5,7 @@ metadata:
   name: {{ .name }}
 spec:
   owners:
-    - name: system:serviceaccount:argocd:argocd-application-controller
+    - name: system:serviceaccount:argocd:argocd-server
       kind: ServiceAccount
   namespaceOptions:
     additionalMetadata:
