@@ -71,7 +71,7 @@ tenants:
 # Tenant4 config
   - name: tenant-id4
     owners:
-    # namespaces:
+    namespaces:
     #   - tenant-id4-dev
     #   - tenant-id4-uat
     # namespaceOptions:
