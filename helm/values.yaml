@@ -69,9 +69,9 @@ tenants:
       items:
       
 # Tenant4 config
-  - name: tenant-id4
-    owners:
-    namespaces:
+  # - name: tenant-id4
+  #   owners:
+  #   namespaces:
     #   - tenant-id4-dev
     #   - tenant-id4-uat
     # namespaceOptions:
