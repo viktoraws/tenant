@@ -27,6 +27,7 @@ tenants:
                 cpu: 100m
                 memory: 10Mi
               type: Container
+              
 # Tenant2 config
   - name: tenant-id2
     namespaces:
@@ -54,11 +55,24 @@ tenants:
                 cpu: 100m
                 memory: 10Mi
               type: Container
+              
 # Tenant3 config
   - name: tenant-id3
     namespaces:
       - tenant-id3-dev
       - tenant-id3-uat
+    owners:
+    namespaceOptions:
+    resourceQuotas:
+      items:
+    limitRanges:
+      items:
+      
+# Tenant4 config
+  - name: tenant-id4
+    namespaces:
+      - tenant-id4-dev
+      - tenant-id4-uat
     owners:
     namespaceOptions:
     resourceQuotas:
