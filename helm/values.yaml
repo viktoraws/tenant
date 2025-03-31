@@ -64,14 +64,3 @@ tenants:
       items:
     limitRanges:
       items:
-# Tenant4 config
-  - name: tenant-id4
-    namespaces:
-      - tenant-id4-dev
-      - tenant-id4-uat
-    owners:
-    namespaceOptions:
-    resourceQuotas:
-      items:
-    limitRanges:
-      items:
