@@ -4,7 +4,6 @@ tenants:
     namespaces:
       - tenant-id1-dev
       - tenant-id1-uat
-      - tenant-id1-prd
     owners:
     namespaceOptions:
       quota: 3
