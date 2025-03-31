@@ -5,6 +5,7 @@ tenants:
       - tenant-id1-dev
       - tenant-id1-uat
       - tenant-id1-prd
+      - namespace-123456-test
     owners:
     namespaceOptions:
       quota: 3
